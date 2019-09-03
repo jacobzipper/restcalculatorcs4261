@@ -6,20 +6,20 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/add/:var1/:var2', function(req, res, next) {
-  res.json({answer: parseInt(req.params.var1, 10) + parseInt(req.params.var2, 10)});
+router.get('/add', function(req, res, next) {
+  res.json({answer: parseInt(req.query.var1, 10) + parseInt(req.query.var2, 10)});
 });
 
-router.get('/sub/:var1/:var2', function(req, res, next) {
-  res.json({answer: parseInt(req.params.var1, 10) - parseInt(req.params.var2, 10)});
+router.get('/sub', function(req, res, next) {
+  res.json({answer: parseInt(req.query.var1, 10) - parseInt(req.query.var2, 10)});
 });
 
-router.get('/div/:var1/:var2', function(req, res, next) {
-  res.json({answer: parseInt(req.params.var1, 10) / parseInt(req.params.var2, 10)});
+router.get('/div', function(req, res, next) {
+  res.json({answer: parseInt(req.query.var1, 10) / parseInt(req.query.var2, 10)});
 });
 
-router.get('/mul/:var1/:var2', function(req, res, next) {
-  res.json({answer: parseInt(req.params.var1, 10) * parseInt(req.params.var2, 10)});
+router.get('/mul', function(req, res, next) {
+  res.json({answer: parseInt(req.query.var1, 10) * parseInt(req.query.var2, 10)});
 });
 
 module.exports = router;
